@@ -5,6 +5,10 @@ set scrolloff=5
 set ignorecase
 set smartcase
 set incsearch
+# set showcmd
+
+# IdeaVim Specific
+set ideastatusicon=gray
 
 # Plugins
 Plug 'preservim/nerdtree'
@@ -13,13 +17,39 @@ Plug 'tpope/vim-surround'
 Plug 'vim-easymotion'
 
 # Mappings
+## Files
+nmap <leader>o <Action>(GotoFile)
 nmap <leader>e <Action>(RecentFiles)
 nmap <leader><leader>e :NERDTree<CR>
-nmap <leader>q <Action>(Close)
+nmap <leader><leader>q :NERDTreeClose<CR>
+
+## Terminal
 nmap <leader>t <Action>(ActivateTerminalToolWindow)
 
+## Tab Groups
+nmap <C-W>o <Action>(MoveEditorToOppositeTabGroup)
+
+## Editor
 nmap gh <Action>(ShowErrorDescription)
 nmap gr <Action>(RenameElement)
 nmap gf <Action>(ReformatCode)
-nmap ggd <Action>(Vcs.ShowDiffChangedLines)
-nmap ggr <Action>(Vcs.RollbackChangedLines)
+nmap =c <Action>(VcsShowCurrentChangeMarker)
+nmap <leader>v <Action>(Vcs.QuickListPopupAction)
+nmap <leader>x <Action>(HideAllWindows)
+
+## Navigation
+map <S-Space> <Action>(GotoNextError)
+nmap [[ <Action>(MethodUp)
+nmap ]] <Action>(MethodDown)
+nmap ]c <Action>(VcsShowNextChangeMarker)
+nmap [c <Action>(VcsShowPrevChangeMarker)
+
+### easymotion
+map <leader>f <Plug>(easymotion-s)
+map <leader>e <Plug>(easymotion-f)
+
+## I forget caps lock sometimes
+map H h
+map J j
+map K k
+map L l
