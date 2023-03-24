@@ -9,6 +9,7 @@ set incsearch
 
 # IdeaVim Specific
 set ideastatusicon=gray
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
 
 # Plugins
 Plug 'preservim/nerdtree'
@@ -27,7 +28,25 @@ nmap <leader><leader>q :NERDTreeClose<CR>
 nmap <leader>t <Action>(ActivateTerminalToolWindow)
 
 ## Tab Groups
-nmap <C-W>o <Action>(MoveEditorToOppositeTabGroup)
+nnoremap <c-\> :action SplitVertically<CR>
+nnoremap <c--> :action SplitHorizontally<CR>
+nnoremap <c-=> :action Unsplit<CR>
+nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
+
+sethandler <c-j> a:vim
+sethandler <c-k> a:vim
+
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+
+nnoremap <TAB> :action NextTab<CR>
+nnoremap <s-TAB> :action PreviousTab<CR>
+
+nnoremap <leader>qq :action CloseContent<CR>
+nnoremap <leader>qa :action CloseAllEditors<CR>
+nnoremap <leader>qo :action CloseAllEditorsButActive<CR>
 
 ## Editor
 nmap gh <Action>(ShowErrorDescription)
@@ -36,20 +55,12 @@ nmap gf <Action>(ReformatCode)
 nmap =c <Action>(VcsShowCurrentChangeMarker)
 nmap <leader>v <Action>(Vcs.QuickListPopupAction)
 nmap <leader>x <Action>(HideAllWindows)
+nnoremap <leader>a :action Refactorings.QuickListPopupAction<CR>
 
 ## Navigation
-map <S-Space> <Action>(GotoNextError)
+nmap ge :action GotoNextError<CR>
+nmap gE :action GotoPreviousError<CR>
 nmap [[ <Action>(MethodUp)
 nmap ]] <Action>(MethodDown)
 nmap ]c <Action>(VcsShowNextChangeMarker)
 nmap [c <Action>(VcsShowPrevChangeMarker)
-
-### easymotion
-map <leader>f <Plug>(easymotion-s)
-map <leader>e <Plug>(easymotion-f)
-
-## I forget caps lock sometimes
-map H h
-map J j
-map K k
-map L l
