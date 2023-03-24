@@ -1,0 +1,25 @@
+# General
+set relativenumber
+set number
+set scrolloff=5
+set ignorecase
+set smartcase
+set incsearch
+
+# Plugins
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'vim-easymotion'
+
+# Mappings
+nmap <leader>e <Action>(RecentFiles)
+nmap <leader><leader>e :NERDTree<CR>
+nmap <leader>q <Action>(Close)
+nmap <leader>t <Action>(ActivateTerminalToolWindow)
+
+nmap gh <Action>(ShowErrorDescription)
+nmap gr <Action>(RenameElement)
+nmap gf <Action>(ReformatCode)
+nmap ggd <Action>(Vcs.ShowDiffChangedLines)
+nmap ggr <Action>(Vcs.RollbackChangedLines)
