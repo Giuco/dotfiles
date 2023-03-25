@@ -5,11 +5,10 @@ set scrolloff=5
 set ignorecase
 set smartcase
 set incsearch
-# set showcmd
 
 # IdeaVim Specific
 set ideastatusicon=gray
-nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+nnoremap <leader>r :IdeaVim.ReloadVimRc.reload<CR>
 
 # Plugins
 Plug 'preservim/nerdtree'
@@ -22,7 +21,7 @@ Plug 'vim-easymotion'
 nmap <leader>o <Action>(GotoFile)
 nmap <leader>e <Action>(RecentFiles)
 nmap <leader><leader>e :NERDTree<CR>
-nmap <leader><leader>q :NERDTreeClose<CR>
+nmap <leader><leader>E :NERDTreeClose<CR>
 
 ## Terminal
 nmap <leader>t <Action>(ActivateTerminalToolWindow)
@@ -58,8 +57,6 @@ nmap =c <Action>(VcsShowCurrentChangeMarker)
 nmap <leader>v <Action>(Vcs.QuickListPopupAction)
 nmap <leader>x <Action>(HideAllWindows)
 nnoremap <leader>a :action Refactorings.QuickListPopupAction<CR>
-
-map <s><s> <Action>(CodeCompletion)
 
 ## Navigation
 nmap ge :action GotoNextError<CR>
