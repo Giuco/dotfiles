@@ -49,13 +49,17 @@ nnoremap <leader>qa :action CloseAllEditors<CR>
 nnoremap <leader>qo :action CloseAllEditorsButActive<CR>
 
 ## Editor
-nmap gh <Action>(ShowErrorDescription)
-nmap gr <Action>(RenameElement)
-nmap gf <Action>(ReformatCode)
+nmap <leader>h <Action>(ShowErrorDescription)
+nmap <leader>r <Action>(RenameElement)
+nmap <leader>f <Action>(ReformatCode)
+nmap <leader>p <Action>(QuickImplementations)
+nmap <leader>s <Action>(SaveAll)
 nmap =c <Action>(VcsShowCurrentChangeMarker)
 nmap <leader>v <Action>(Vcs.QuickListPopupAction)
 nmap <leader>x <Action>(HideAllWindows)
 nnoremap <leader>a :action Refactorings.QuickListPopupAction<CR>
+
+map <s><s> <Action>(CodeCompletion)
 
 ## Navigation
 nmap ge :action GotoNextError<CR>
