@@ -1,7 +1,7 @@
 # General
 set relativenumber
 set number
-set scrolloff=5
+set scrolloff=10
 set ignorecase
 set smartcase
 set incsearch
@@ -31,6 +31,7 @@ nnoremap <c-\> :action SplitVertically<CR>
 nnoremap <c--> :action SplitHorizontally<CR>
 nnoremap <c-=> :action Unsplit<CR>
 nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
+nnoremap <c-x> :action CloseContent<CR>
 
 sethandler <c-j> a:vim
 sethandler <c-k> a:vim
@@ -43,7 +44,6 @@ nnoremap <c-k> <c-w>k
 nnoremap <TAB> :action NextTab<CR>
 nnoremap <s-TAB> :action PreviousTab<CR>
 
-nnoremap <leader>qq :action CloseContent<CR>
 nnoremap <leader>qa :action CloseAllEditors<CR>
 nnoremap <leader>qo :action CloseAllEditorsButActive<CR>
 
