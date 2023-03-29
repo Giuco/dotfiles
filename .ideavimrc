@@ -6,6 +6,8 @@ set ignorecase
 set smartcase
 set incsearch
 
+let mapleader = " "
+
 # IdeaVim Specific
 set ideastatusicon=gray
 nnoremap <leader>r :IdeaVim.ReloadVimRc.reload<CR>
@@ -65,3 +67,8 @@ nmap [[ <Action>(MethodUp)
 nmap ]] <Action>(MethodDown)
 nmap ]c <Action>(VcsShowNextChangeMarker)
 nmap [c <Action>(VcsShowPrevChangeMarker)
+
+if &ide =~? 'Android Studio'
+    nmap <leader><leader>l <Action>(Flutter.Toolbar.ReloadAllAction)
+    nmap <leader><leader>s <Action>(Flutter.Toolbar.RestartAllAction)
+endif
