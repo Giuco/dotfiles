@@ -11,7 +11,7 @@ opt.expandtab = true
 opt.autoindent = true
 
 -- line wrapping
-opt.wrap = false
+opt.wrap = true
 
 -- search settings
 opt.ignorecase = true
@@ -40,3 +40,5 @@ opt.iskeyword:append("-")
 -- command timeout
 opt.timeoutlen = 5000
 
+-- scrolloff
+opt.scrolloff = 10
