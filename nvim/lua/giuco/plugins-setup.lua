@@ -58,6 +58,8 @@ return packer.startup(function(use)
     -- configuring the lsp servers
     use("neovim/nvim-lspconfig")
 
+    use("hashivim/vim-terraform")
+
     if packer_bootstrap then
         require("packer").sync()
     end

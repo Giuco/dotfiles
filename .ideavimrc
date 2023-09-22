@@ -53,7 +53,7 @@ nnoremap <leader>qo :action CloseAllEditorsButActive<CR>
 nmap <leader>h <Action>(ShowErrorDescription)
 nmap <leader>r <Action>(RenameElement)
 nmap <leader>f <Action>(ReformatCode)
-nmap <leader>p <Action>(QuickImplementations)
+nmap <leader>p <Action>($LRU)
 nmap <leader>s <Action>(SaveAll)
 nmap =c <Action>(VcsShowCurrentChangeMarker)
 nmap <leader>v <Action>(Vcs.QuickListPopupAction)
