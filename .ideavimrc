@@ -59,6 +59,7 @@ nmap =c <Action>(VcsShowCurrentChangeMarker)
 nmap <leader>v <Action>(Vcs.QuickListPopupAction)
 nmap <leader>x <Action>(HideAllWindows)
 nnoremap <leader>a :action Refactorings.QuickListPopupAction<CR>
+nmap <leader>m <Action>(ShowIntentionActions)
 
 ## Navigation
 nmap ge :action GotoNextError<CR>
