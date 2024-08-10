@@ -4,3 +4,5 @@ alias l="eza  -l --icons --color=always --header --git --created --changed --no-
 alias vim="nvim"
 alias v="vim"
 alias cd="z"
+alias kc="kubectl"
+alias dc="docker compose"
