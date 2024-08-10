@@ -52,10 +52,7 @@ nnoremap <leader>qo :action CloseAllEditorsButActive<CR>
 
 ## Editor
 nmap <leader>h <Action>(ShowErrorDescription)
-nmap <leader>r <Action>(RenameElement)
-nmap <leader>f <Action>(ReformatCode)
 nmap <leader>p <Action>($LRU)
-nmap <leader>s <Action>(SaveAll)
 nmap =c <Action>(VcsShowCurrentChangeMarker)
 nmap <leader>v <Action>(Vcs.QuickListPopupAction)
 nmap <leader>x <Action>(HideAllWindows)
@@ -72,6 +69,12 @@ nmap [[ <Action>(MethodUp)
 nmap ]] <Action>(MethodDown)
 nmap ]c <Action>(VcsShowNextChangeMarker)
 nmap [c <Action>(VcsShowPrevChangeMarker)
+nmap <leader>s <Action>(FileStructurePopup)
+
+## Actions
+nmap <leader>] <Action>(Run)
+nmap <leader>r <Action>(RenameElement)
+nmap <leader>f <Action>(ReformatCode)
 
 if &ide =~? 'Android Studio'
     nmap <leader><leader>l <Action>(Flutter.Toolbar.ReloadAllAction)
