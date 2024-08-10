@@ -10,6 +10,7 @@ let mapleader = " "
 
 # IdeaVim Specific
 set ideastatusicon=gray
+set ideajoin
 nnoremap <leader>r :IdeaVim.ReloadVimRc.reload<CR>
 
 # Plugins
@@ -33,7 +34,7 @@ nnoremap <c-\> :action SplitVertically<CR>
 nnoremap <c--> :action SplitHorizontally<CR>
 nnoremap <c-=> :action Unsplit<CR>
 nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
-nnoremap <c-x> :action CloseContent<CR>
+nnoremap <c-q> :action CloseContent<CR>
 
 sethandler <c-j> a:vim
 sethandler <c-k> a:vim
@@ -61,9 +62,12 @@ nmap <leader>x <Action>(HideAllWindows)
 nnoremap <leader>a :action Refactorings.QuickListPopupAction<CR>
 nmap <leader>m <Action>(ShowIntentionActions)
 
+## Editor Size
+nmap <leader><leader>h <Action>(ResizeToolWindowLeft)
+
 ## Navigation
-nmap ge :action GotoNextError<CR>
-nmap gE :action GotoPreviousError<CR>
+nmap ]e :action GotoNextError<CR>
+nmap [e :action GotoPreviousError<CR>
 nmap [[ <Action>(MethodUp)
 nmap ]] <Action>(MethodDown)
 nmap ]c <Action>(VcsShowNextChangeMarker)
