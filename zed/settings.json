@@ -4,15 +4,13 @@
 // documentation: https://zed.dev/docs/configuring-zed
 //
 // To see all of Zed's default settings without changing your
-// custom settings, run the `zed: Open Default Settings` command
-// from the command palette
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
 {
-  "agent": {
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4-5"
-    },
-    "model_parameters": []
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
   },
   "context_servers": {
     "browser-tools-context-server": {
@@ -29,16 +27,54 @@
       "source": "extension",
       "enabled": true,
       "settings": {
-        "context7_api_key": "ctx7sk-48936ca6-1caf-4aa1-8ee7-2d92561d9b69"
+        "context7_api_key": "YOUR_API_KEY_HERE"
       }
     }
   },
+  "agent": {
+    "profiles": {
+      "ask-2": {
+        "name": "Ask 2",
+        "tools": {
+          "diagnostics": true,
+          "fetch": true,
+          "list_directory": true,
+          "project_notifications": false,
+          "now": true,
+          "find_path": true,
+          "read_file": true,
+          "open": true,
+          "grep": true,
+          "thinking": true,
+          "web_search": true
+        },
+        "enable_all_context_servers": false,
+        "context_servers": {}
+      }
+    },
+    "always_allow_tool_actions": false,
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4.5"
+    },
+    "model_parameters": []
+  },
+  "theme": "Ayu Mirage",
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "languages": {
+    "Scala": {
+      "show_edit_predictions": false
+    },
+    "Python": {}
+  },
   "vim_mode": true,
+  "relative_line_numbers": "enabled",
+  "cursor_blink": false,
+  "vertical_scroll_margin": 20,
   "ui_font_size": 16,
-  "buffer_font_size": 16,
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark"
-  }
+  "buffer_font_size": 14
 }
