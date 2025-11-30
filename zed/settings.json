@@ -14,7 +14,6 @@
   },
   "context_servers": {
     "browser-tools-context-server": {
-      "source": "extension",
       "enabled": true,
       "settings": {
         "port": 3025,
@@ -24,7 +23,6 @@
       }
     },
     "mcp-server-context7": {
-      "source": "extension",
       "enabled": true,
       "settings": {
         "context7_api_key": "YOUR_API_KEY_HERE"
@@ -32,6 +30,7 @@
     }
   },
   "agent": {
+    "default_profile": "write",
     "profiles": {
       "ask-2": {
         "name": "Ask 2",
@@ -59,13 +58,16 @@
     },
     "model_parameters": []
   },
-  "theme": "Ayu Mirage",
+  "theme": "Gruvbox Dark",
   "autosave": {
     "after_delay": {
       "milliseconds": 1000
     }
   },
   "languages": {
+    "Rust": {
+      "show_edit_predictions": false
+    },
     "Scala": {
       "show_edit_predictions": false
     },

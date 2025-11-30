@@ -28,6 +28,12 @@
     }
   },
   {
+    "context": "VimControl",
+    "bindings": {
+      "space ]": "task::Rerun"
+    }
+  },
+  {
     "context": "Dock",
     "bindings": {
       "ctrl-w h": "workspace::ActivatePaneLeft",
