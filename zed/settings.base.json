@@ -1,12 +1,9 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run the `open default settings` command
-// from the command palette or from `Zed` application menu.
 {
+  "agent_servers": {
+    "claude": {
+      "default_mode": "plan"
+    }
+  },
   "diagnostics": {
     "inline": {
       "enabled": true
@@ -24,9 +21,7 @@
     },
     "mcp-server-context7": {
       "enabled": true,
-      "settings": {
-        "context7_api_key": "YOUR_API_KEY_HERE"
-      }
+      "settings": {}
     }
   },
   "agent": {
@@ -52,10 +47,6 @@
       }
     },
     "always_allow_tool_actions": false,
-    "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-sonnet-4.5"
-    },
     "model_parameters": []
   },
   "theme": "Gruvbox Dark",
@@ -66,6 +57,15 @@
   },
   "languages": {
     "Rust": {
+      "tasks": {
+        "variables": {
+          "reveal": "no_focus"
+        }
+      },
+      "inlay_hints": {
+        "show_background": false,
+        "enabled": true
+      },
       "show_edit_predictions": false
     },
     "Scala": {

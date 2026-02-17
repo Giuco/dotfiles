@@ -1,2 +1,5 @@
 nvim/plugin/
 karabiner/automatic_backups
+zed/settings.json
+zed/settings.local.json
+zed/settings.secrets.json
