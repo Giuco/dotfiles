@@ -4,10 +4,17 @@
       "default_mode": "plan"
     }
   },
+  "agent_servers": {
+    "opencode": {
+      "type": "registry",
+    },
+  },
+  "soft_wrap": "none",
+  "preferred_line_length": 999999999,
   "diagnostics": {
     "inline": {
-      "enabled": true
-    }
+      "enabled": true,
+    },
   },
   "context_servers": {
     "browser-tools-context-server": {
@@ -16,8 +23,8 @@
         "port": 3025,
         "host": "127.0.0.1",
         "server_command": "npx",
-        "server_args": ["@agentdeskai/browser-tools-server@1.2.0"]
-      }
+        "server_args": ["@agentdeskai/browser-tools-server@1.2.0"],
+      },
     },
     "mcp-server-context7": {
       "enabled": true,
@@ -25,37 +32,52 @@
     }
   },
   "agent": {
-    "default_profile": "write",
-    "profiles": {
-      "ask-2": {
-        "name": "Ask 2",
-        "tools": {
-          "diagnostics": true,
-          "fetch": true,
-          "list_directory": true,
-          "project_notifications": false,
-          "now": true,
-          "find_path": true,
-          "read_file": true,
-          "open": true,
-          "grep": true,
-          "thinking": true,
-          "web_search": true
+    "tool_permissions": {
+      "tools": {
+        "mcp:mcp-server-context7:query-docs": {
+          "default_mode": "allow"
         },
-        "enable_all_context_servers": false,
-        "context_servers": {}
+        "fetch": {
+          "always_allow": [
+            {
+              "pattern": "^https?://kubernetes\\.io"
+            },
+            {
+              "pattern": "^https?://flink\\.apache\\.org"
+            },
+            {
+              "pattern": "^https?://cwiki\\.apache\\.org"
+            }
+          ]
+        }
       }
     },
+    "default_profile": "write",
     "always_allow_tool_actions": false,
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4.5"
+    },
     "model_parameters": []
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4.5",
+    },
+    "model_parameters": [],
   },
   "theme": "Gruvbox Dark",
   "autosave": {
     "after_delay": {
-      "milliseconds": 1000
-    }
+      "milliseconds": 1000,
+    },
   },
   "languages": {
+    "Markdown-Inline": {
+      "inlay_hints": {
+        "show_background": false,
+        "enabled": true,
+      },
+    },
     "Rust": {
       "tasks": {
         "variables": {
@@ -69,14 +91,32 @@
       "show_edit_predictions": false
     },
     "Scala": {
-      "show_edit_predictions": false
+      "show_edit_predictions": false,
     },
-    "Python": {}
+    "Python": {},
   },
   "vim_mode": true,
   "relative_line_numbers": "enabled",
   "cursor_blink": false,
   "vertical_scroll_margin": 20,
   "ui_font_size": 16,
-  "buffer_font_size": 14
+  "buffer_font_size": 14,
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": {
+          "command": "clippy",
+        },
+        "cargo": {
+          "allFeatures": true,
+        },
+        "procMacro": {
+          "enable": true,
+        },
+      },
+    },
+  },
+  "features": {
+    "edit_prediction_provider": "copilot",
+  },
 }
