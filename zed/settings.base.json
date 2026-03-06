@@ -30,8 +30,42 @@
     }
   },
   "agent": {
+    "favorite_models": [
+      {
+        "provider": "copilot_chat",
+        "model": "claude-sonnet-4.5",
+        "enable_thinking": false
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "claude-opus-4.5",
+        "enable_thinking": false
+      }
+    ],
     "tool_permissions": {
       "tools": {
+        "restore_file_from_disk": {
+          "default": "allow"
+        },
+        "terminal": {
+          "always_allow": [
+            {
+              "pattern": "^ls\\b"
+            },
+            {
+              "pattern": "^mkdir\\b"
+            },
+            {
+              "pattern": "^grep\\b"
+            },
+            {
+              "pattern": "^git\\s+add(\\s|$)"
+            },
+            {
+              "pattern": "^git\\s+status(\\s|$)"
+            }
+          ]
+        },
         "mcp:mcp-server-context7:query-docs": {
           "default_mode": "allow"
         }
@@ -41,7 +75,7 @@
     "always_allow_tool_actions": false,
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.5"
+      "model": "claude-opus-4.5"
     },
     "model_parameters": []
   },
