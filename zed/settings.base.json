@@ -1,18 +1,22 @@
 {
+  "edit_predictions": {
+    "provider": "copilot"
+  },
   "agent_servers": {
-    "claude": {
+    "claude-acp": {
+      "type": "registry",
       "default_mode": "plan"
     },
     "opencode": {
-      "type": "registry"
-    }
+      "type": "registry",
+    },
   },
   "soft_wrap": "none",
   "preferred_line_length": 999999999,
   "diagnostics": {
     "inline": {
-      "enabled": true
-    }
+      "enabled": true,
+    },
   },
   "context_servers": {
     "browser-tools-context-server": {
@@ -21,93 +25,86 @@
         "port": 3025,
         "host": "127.0.0.1",
         "server_command": "npx",
-        "server_args": ["@agentdeskai/browser-tools-server@1.2.0"]
-      }
+        "server_args": ["@agentdeskai/browser-tools-server@1.2.0"],
+      },
     },
     "mcp-server-context7": {
       "enabled": true,
-      "settings": {}
-    }
+      "settings": {},
+    },
   },
   "agent": {
     "favorite_models": [
       {
         "provider": "copilot_chat",
         "model": "claude-sonnet-4.5",
-        "enable_thinking": false
+        "enable_thinking": false,
       },
       {
         "provider": "copilot_chat",
         "model": "claude-opus-4.5",
-        "enable_thinking": false
-      }
+        "enable_thinking": false,
+      },
     ],
     "tool_permissions": {
       "tools": {
         "restore_file_from_disk": {
-          "default": "allow"
+          "default": "allow",
         },
         "terminal": {
           "always_allow": [
             {
-              "pattern": "^ls\\b"
+              "pattern": "^ls\b",
             },
             {
-              "pattern": "^mkdir\\b"
+              "pattern": "^mkdir\b",
             },
             {
-              "pattern": "^grep\\b"
+              "pattern": "^grep\b",
             },
-            {
-              "pattern": "^git\\s+add(\\s|$)"
-            },
-            {
-              "pattern": "^git\\s+status(\\s|$)"
-            }
-          ]
+          ],
         },
         "mcp:mcp-server-context7:query-docs": {
-          "default_mode": "allow"
-        }
-      }
+          "default": "allow"
+        },
+      },
     },
     "default_profile": "write",
-    "always_allow_tool_actions": false,
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-opus-4.5"
+      "model": "claude-opus-4.5",
     },
-    "model_parameters": []
+    "model_parameters": [],
   },
   "theme": "Gruvbox Dark",
   "autosave": {
     "after_delay": {
-      "milliseconds": 1000
-    }
+      "milliseconds": 1000,
+    },
   },
   "languages": {
     "Markdown-Inline": {
       "inlay_hints": {
         "show_background": false,
-        "enabled": true
-      }
+        "enabled": true,
+      },
     },
     "Rust": {
       "tasks": {
         "variables": {
-          "reveal": "no_focus"
-        }
+          "reveal": "no_focus",
+        },
       },
       "inlay_hints": {
         "show_background": false,
-        "enabled": true
+        "enabled": true,
       },
-      "show_edit_predictions": false
+      "show_edit_predictions": false,
     },
     "Scala": {
-      "show_edit_predictions": false
+      "show_edit_predictions": false,
     },
-    "Python": {}
+    "Python": {},
   },
   "vim_mode": true,
   "relative_line_numbers": "enabled",
@@ -119,18 +116,15 @@
     "rust-analyzer": {
       "initialization_options": {
         "check": {
-          "command": "clippy"
+          "command": "clippy",
         },
         "cargo": {
-          "allFeatures": true
+          "allFeatures": true,
         },
         "procMacro": {
-          "enable": true
-        }
-      }
-    }
+          "enable": true,
+        },
+      },
+    },
   },
-  "features": {
-    "edit_prediction_provider": "copilot"
-  }
 }
