@@ -1,0 +1,99 @@
+# Cascade terminal allow list — declarative source of truth.
+#
+# Each [category] table contributes entries to the final list, in the order
+# the tables appear in this file. A category may use:
+#   entries = [...]                                  # literal list
+#   cross   = { prefixes = [...], subcommands = [...] }   # cartesian product
+# (Both keys can coexist; entries are appended in that order: literal first,
+#  then cross-product.)
+#
+# Conventions:
+#   * trailing " *" means PREFIX MATCH — any args allowed (e.g. "git status *")
+#   * no trailing " *" means EXACT match (e.g. "git stash")
+
+# ---------------------------------------------------------------------------
+# Git
+# ---------------------------------------------------------------------------
+[categories."git.readonly"]
+entries = [
+    "git status *", "git log *", "git diff *", "git show *",
+    "git branch *", "git fetch *", "git rev-parse *",
+    "git blame *", "git describe *", "git reflog *",
+    "git remote -v", "git remote show *",
+    "git tag", "git tag -l *",
+    "git shortlog *", "git rev-list *",
+    "git ls-files *",
+    "git config --get *",
+    "git stash", "git stash list", "git stash show *",
+]
+
+[categories."git.mutating_low_risk"]
+entries = [
+    "git pull *",
+    "git checkout main",
+]
+
+# ---------------------------------------------------------------------------
+# dbt — two binaries × the same read-only subcommand set.
+# ---------------------------------------------------------------------------
+[categories."dbt.readonly".cross]
+prefixes    = ["dbt", "~/.local/bin/dbt"]
+subcommands = ["--version", "parse", "debug", "ls *", "test *", "compile *", "show *"]
+
+# ---------------------------------------------------------------------------
+# Databricks
+# ---------------------------------------------------------------------------
+[categories."databricks.readonly"]
+entries = [
+    "databricks --version",
+    "databricks auth *",
+    "databricks current-user *",
+    "databricks experimental aitools tools *",
+    "databricks workspace list *",
+    "databricks clusters list *",
+    "databricks warehouses list *",
+    "databricks jobs list *",
+]
+
+# ---------------------------------------------------------------------------
+# GitHub CLI
+# ---------------------------------------------------------------------------
+[categories."gh.readonly"]
+entries = [
+    "gh --version", "gh --help", "gh auth status",
+    "gh pr view *", "gh pr diff *", "gh pr list *", "gh pr status",
+    "gh repo view *", "gh issue view *",
+    "gh run view *", "gh workflow view *",
+]
+
+# ---------------------------------------------------------------------------
+# Filesystem / text inspection
+# ---------------------------------------------------------------------------
+[categories."fs.inspection"]
+entries = [
+    "ls *", "cat *", "head *", "tail *", "wc *",
+    "sort *", "uniq *", "cut *", "tr *", "awk *", "sed *",
+    "grep *", "rg *", "fd *", "find *", "jq *", "diff *",
+    "column *", "tree *", "file *", "stat *",
+    "realpath *", "basename *", "dirname *",
+    "du -sh *", "df -h",
+    "pwd", "echo *", "date *",
+]
+
+# ---------------------------------------------------------------------------
+# Shell / process introspection
+# ---------------------------------------------------------------------------
+[categories."shell.introspection"]
+entries = [
+    "which *", "type *", "command -v *",
+    "ps *", "pgrep *", "sleep *",
+]
+
+# ---------------------------------------------------------------------------
+# Tool version probes
+# ---------------------------------------------------------------------------
+[categories."tool.versions"]
+entries = [
+    "python3 --version", "python --version",
+    "node --version", "npm --version",
+]
