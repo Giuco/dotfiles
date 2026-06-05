@@ -1,6 +1,16 @@
-ln -s -f ~/dotfiles/.ideavimrc ~/.ideavimrc
-ln -s -f ~/dotfiles/nvim ~/.config/nvim
-ln -s -f ~/dotfiles/karabiner ~/.config/karabiner
-ln -s -f ~/dotfiles/zed/keymap.json ~/.config/zed/keymap.json
+#!/usr/bin/env bash
+# Symlink dotfiles into place. Safe to re-run (ln -sf overwrites).
+
+mkdir -p ~/.config ~/.config/zed ~/.config/ghostty
+
+# Generate zed/settings.json from base + local + secrets before linking.
 ~/dotfiles/zed/build.sh
-ln -s -f ~/dotfiles/zed/settings.json ~/.config/zed/settings.json
+
+ln -sf ~/dotfiles/.zshrc            ~/.zshrc
+ln -sf ~/dotfiles/.ideavimrc        ~/.ideavimrc
+ln -sf ~/dotfiles/starship.toml     ~/.config/starship.toml
+ln -sf ~/dotfiles/nvim              ~/.config/nvim
+ln -sf ~/dotfiles/karabiner         ~/.config/karabiner
+ln -sf ~/dotfiles/zed/keymap.json   ~/.config/zed/keymap.json
+ln -sf ~/dotfiles/zed/settings.json ~/.config/zed/settings.json
+ln -sf ~/dotfiles/ghostty/config    ~/.config/ghostty/config

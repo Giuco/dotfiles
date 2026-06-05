@@ -1,8 +1,5 @@
 {
   "agent_servers": {
-    "claude": {
-      "default_mode": "plan"
-    },
     "opencode": {
       "type": "registry"
     }
@@ -21,7 +18,9 @@
         "port": 3025,
         "host": "127.0.0.1",
         "server_command": "npx",
-        "server_args": ["@agentdeskai/browser-tools-server@1.2.0"]
+        "server_args": [
+          "@agentdeskai/browser-tools-server@1.2.0"
+        ]
       }
     },
     "mcp-server-context7": {
@@ -30,18 +29,6 @@
     }
   },
   "agent": {
-    "favorite_models": [
-      {
-        "provider": "copilot_chat",
-        "model": "claude-sonnet-4.5",
-        "enable_thinking": false
-      },
-      {
-        "provider": "copilot_chat",
-        "model": "claude-opus-4.5",
-        "enable_thinking": false
-      }
-    ],
     "tool_permissions": {
       "tools": {
         "restore_file_from_disk": {
@@ -73,10 +60,6 @@
     },
     "default_profile": "write",
     "always_allow_tool_actions": false,
-    "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-opus-4.5"
-    },
     "model_parameters": []
   },
   "theme": "Gruvbox Dark",
@@ -129,8 +112,5 @@
         }
       }
     }
-  },
-  "features": {
-    "edit_prediction_provider": "copilot"
   }
 }
