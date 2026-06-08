@@ -50,3 +50,14 @@ function zvm_after_init() {
 
 # Aliases
 source ~/dotfiles/alias.sh
+
+# Local tooling PATHs
+export PATH="$HOME/.codeium/windsurf/bin:$PATH"   # Windsurf
+# dbt (Fusion + installer)
+if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+alias dbtf="$HOME/.local/bin/dbt"
+
+# Machine-specific overrides & secrets (not tracked in git)
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
