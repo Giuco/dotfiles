@@ -1,0 +1,5 @@
+# Ghostty configuration
+# Docs: https://ghostty.org/docs/config
+#
+# This file is symlinked to ~/.config/ghostty/config by ~/dotfiles/symlinks.sh.
+
