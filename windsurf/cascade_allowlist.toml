@@ -25,6 +25,7 @@ entries = [
     "git ls-files *",
     "git config --get *",
     "git stash", "git stash list", "git stash show *",
+    "git fetch",
 ]
 
 [categories."git.mutating_low_risk"]
@@ -38,17 +39,22 @@ entries = [
 # ---------------------------------------------------------------------------
 [categories."dbt.readonly".cross]
 prefixes    = ["dbt", "~/.local/bin/dbt"]
-subcommands = ["--version", "parse", "debug", "ls *", "test *", "compile *", "show *"]
+subcommands = ["--version", "parse", "debug", "ls *", "test *", "compile *", "show *", "parse *"]
 
 # ---------------------------------------------------------------------------
 # Databricks
 # ---------------------------------------------------------------------------
 [categories."databricks.readonly"]
+# NOTE: avoid wildcarding `databricks auth *` (covers `auth login` which
+# mutates ~/.databrickscfg, and `auth token` which prints OAuth tokens).
+# Avoid wildcarding `databricks experimental aitools tools *` (undocumented
+# namespace, future subcommands could mutate state).
 entries = [
     "databricks --version",
-    "databricks auth *",
+    "databricks auth profiles",
+    "databricks auth describe *",
     "databricks current-user *",
-    "databricks experimental aitools tools *",
+    "databricks experimental aitools tools get-default-warehouse *",
     "databricks workspace list *",
     "databricks clusters list *",
     "databricks warehouses list *",
