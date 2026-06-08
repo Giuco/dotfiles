@@ -3,3 +3,5 @@
 #
 # This file is symlinked to ~/.config/ghostty/config by ~/dotfiles/symlinks.sh.
 
+keybind = global:ctrl+shift+alt+cmd+t=toggle_quick_terminal
+quick-terminal-position = center
