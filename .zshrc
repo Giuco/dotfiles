@@ -46,6 +46,7 @@ export KEYTIMEOUT=1
 # zsh-vi-mode resets keybindings after init, so rebind anything custom here
 function zvm_after_init() {
   bindkey '^[^?' backward-kill-word  # Option+Backspace deletes whole word
+  eval "$(fzf --zsh)"                # re-apply fzf bindings (^R/^T/Alt-C) that zvm clobbers
 }
 
 # Aliases
