@@ -12,7 +12,7 @@
       "type": "registry"
     }
   },
-  "soft_wrap": "none",
+  "soft_wrap": "editor_width",
   "preferred_line_length": 999999999,
   "diagnostics": {
     "inline": {
