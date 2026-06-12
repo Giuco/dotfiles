@@ -5,3 +5,8 @@
 
 keybind = global:ctrl+shift+alt+cmd+t=toggle_quick_terminal
 quick-terminal-position = center
+
+# Treat both Option keys as Alt so Option+Delete (and other meta bindings)
+# send the meta sequence CLIs expect. Trade-off: no Option-based special-char
+# composition (accents, etc.).
+macos-option-as-alt = true
