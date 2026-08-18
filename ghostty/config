@@ -5,6 +5,8 @@
 
 keybind = global:ctrl+shift+alt+cmd+t=toggle_quick_terminal
 quick-terminal-position = center
+# Size is width,height for center position. Taller vertical footprint.
+quick-terminal-size = 25%,70%
 
 # Treat both Option keys as Alt so Option+Delete (and other meta bindings)
 # send the meta sequence CLIs expect. Trade-off: no Option-based special-char

@@ -115,6 +115,9 @@
     "Python": {}
   },
   "vim_mode": true,
+  "vim": {
+    "use_system_clipboard": "on_yank"
+  },
   "relative_line_numbers": "enabled",
   "cursor_blink": false,
   "vertical_scroll_margin": 20,

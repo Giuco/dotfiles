@@ -38,6 +38,12 @@ export BAT_THEME="Catppuccin Mocha"
 eval $(thefuck --alias)
 
 # zoxide (replaces z plugin)
+# _ZO_DOCTOR=0: silence zoxide's "configuration issue" doctor. zsh-vi-mode's
+# deferred zvm_init clobbers the chpwd hook after .zshrc finishes; we re-register
+# it in zvm_after_init below, but the doctor's heuristic still false-positives in
+# the partial-interactive shells Claude Code spawns. The check is cosmetic only —
+# directory tracking is unaffected.
+export _ZO_DOCTOR=0
 eval "$(zoxide init zsh)"
 
 # vi mode handled by zsh-vi-mode plugin (see plugins list above)
@@ -47,6 +53,7 @@ export KEYTIMEOUT=1
 function zvm_after_init() {
   bindkey '^[^?' backward-kill-word  # Option+Backspace deletes whole word
   eval "$(fzf --zsh)"                # re-apply fzf bindings (^R/^T/Alt-C) that zvm clobbers
+  eval "$(zoxide init zsh)"          # re-register zoxide's chpwd hook that zvm clobbers
 }
 
 # Aliases
